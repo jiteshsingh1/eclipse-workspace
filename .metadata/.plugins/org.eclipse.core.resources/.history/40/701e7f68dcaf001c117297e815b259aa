@@ -1,0 +1,45 @@
+package employees;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+
+public class employeedetails {
+
+	public static void main(String[] args) {
+			
+		String url = "jdbc:mysql://localhost:3306/employees";
+		String Uname = "root";
+		String Password ="User@684";
+//		String query ="Select * from departments ORDER BY dept_no";
+		String query1 ="Select * from salaries ORDER BY emp_no";
+		String q2= "select e.emp_no ,e.first_name, d.dept_no from employees e,dept_emp d where e.emp_no = (select emp_no from salaries limit 1) limit 1;";
+		
+		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con = DriverManager.getConnection(url,Uname,Password);
+			Statement stmt = con.createStatement();
+			ResultSet rst = stmt.executeQuery(query1);
+			
+			while (rst.next()) {
+				String employee_data = "";
+				for (int i = 1; i <=2 ; i++) {
+					employee_data += rst.getString(i)+"  ";
+				}
+				System.out.println(employee_data);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+
+	}
+
+}

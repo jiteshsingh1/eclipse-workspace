@@ -1,0 +1,45 @@
+package table;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
+public class Table {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		try {
+			//create connection first
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			System.out.println("afasdfs");
+			String url= "jdbc:mysql://localhost:3306/table";
+			String User ="root";
+			String Password = "User@684";
+			
+			Connection con = DriverManager.getConnection(url,User,Password);
+			
+			// create a query 
+			
+			String query = "create tabel table1(tid int(20) Primary key auto_increment,tName varchar(30) not null,tCity varchar(30))";
+			
+			// create a statement to execute query 
+			Statement stmt = con.createStatement();
+			stmt.executeUpdate(query);
+			
+			
+			// to check if above code is working we can add an print stmt
+			System.out.println("table created successfully");
+			
+			con.close();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+	}
+}

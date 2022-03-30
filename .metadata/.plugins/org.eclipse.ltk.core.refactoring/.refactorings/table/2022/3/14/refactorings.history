@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;table/src/JDBCtable&apos; to &apos;JDBCtable.java&apos;" description="Rename resource &apos;JDBCtable&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/JDBCtable" name="JDBCtable.java" stamp="1648471337970" updateReferences="true"/>
+</session>

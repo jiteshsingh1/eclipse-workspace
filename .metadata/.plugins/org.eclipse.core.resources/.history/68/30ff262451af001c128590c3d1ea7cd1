@@ -1,0 +1,32 @@
+package employees;
+
+
+public class employeedetails {
+
+	public static void main(String[] args) {
+			
+		String url = "jdbc:mysql://localhost:3306/employees";
+		String Uname = "root";
+		String Password ="User@684";
+		String query ="Select * from employees";
+		
+		
+		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			
+			
+			
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+
+	}
+
+}
